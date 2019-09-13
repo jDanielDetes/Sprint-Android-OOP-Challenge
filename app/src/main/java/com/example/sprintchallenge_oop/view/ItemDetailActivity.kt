@@ -1,10 +1,12 @@
-package com.example.sprintchallenge_oop
+package com.example.sprintchallenge_oop.view
 
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
+import com.example.sprintchallenge_oop.viewmodel.ItemDetailFragment
+import com.example.sprintchallenge_oop.R
 import kotlinx.android.synthetic.main.activity_item_detail.*
 
 /**

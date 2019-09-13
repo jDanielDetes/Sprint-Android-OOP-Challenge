@@ -1,11 +1,12 @@
-package com.example.sprintchallenge_oop
+package com.example.sprintchallenge_oop.viewmodel
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.sprintchallenge_oop.dummy.DummyContent
+import com.example.sprintchallenge_oop.R
+import com.example.sprintchallenge_oop.model.DummyContent
 import kotlinx.android.synthetic.main.activity_item_detail.*
 import kotlinx.android.synthetic.main.item_detail.view.*
 

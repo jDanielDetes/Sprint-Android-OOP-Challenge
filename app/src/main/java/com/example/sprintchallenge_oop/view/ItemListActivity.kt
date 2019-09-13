@@ -1,4 +1,4 @@
-package com.example.sprintchallenge_oop
+package com.example.sprintchallenge_oop.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.sprintchallenge_oop.viewmodel.ItemDetailFragment
+import com.example.sprintchallenge_oop.R
 
-import com.example.sprintchallenge_oop.dummy.DummyContent
+import com.example.sprintchallenge_oop.model.DummyContent
 import kotlinx.android.synthetic.main.activity_item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlinx.android.synthetic.main.item_list.*
@@ -55,7 +57,12 @@ class ItemListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
+        recyclerView.adapter =
+            SimpleItemRecyclerViewAdapter(
+                this,
+                DummyContent.ITEMS,
+                twoPane
+            )
     }
 
     class SimpleItemRecyclerViewAdapter(
