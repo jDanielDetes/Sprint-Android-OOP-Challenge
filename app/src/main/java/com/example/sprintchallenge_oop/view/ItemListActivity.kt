@@ -12,7 +12,7 @@ import android.widget.TextView
 import com.example.sprintchallenge_oop.viewmodel.ItemDetailFragment
 import com.example.sprintchallenge_oop.R
 
-import com.example.sprintchallenge_oop.model.DummyContent
+import com.example.sprintchallenge_oop.viewmodel.EmpirePresenter
 import com.example.sprintchallenge_oop.model.hierarchy
 import kotlinx.android.synthetic.main.activity_item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
@@ -64,7 +64,7 @@ class ItemListActivity : AppCompatActivity() {
         recyclerView.adapter =
             SimpleItemRecyclerViewAdapter(
                 this,
-                DummyContent.ITEMS,
+                EmpirePresenter.ITEMS,
                 twoPane
             )
     }

@@ -13,7 +13,7 @@ package com.example.sprintchallenge_oop.model
 
      ) : hierarchy("Thumb Ring", "Castle age", true) {
          override fun description(): String {
-             return "i love tech especially this one called $name its only in the expansion $expansion and during the $age age and yes thats $isFavorite this is my favorite"
+             return "i love technologies in this game especially the one called $name its only in the expansion $expansion and during the $age age and yes thats $isFavorite this is my favorite"
          }
      }
  }

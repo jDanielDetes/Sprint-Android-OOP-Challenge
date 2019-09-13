@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.sprintchallenge_oop.R
-import com.example.sprintchallenge_oop.model.DummyContent
 import com.example.sprintchallenge_oop.model.hierarchy
 import kotlinx.android.synthetic.main.activity_item_detail.*
+import kotlinx.android.synthetic.main.item_detail.*
 import kotlinx.android.synthetic.main.item_detail.view.*
+import kotlinx.android.synthetic.main.item_detail.view.btn_detailchange
 
 /**
  * A fragment representing a single Item detail screen.
@@ -27,12 +29,18 @@ class ItemDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        btn_detailchange.setOnClickListener {
+
+
+        }
+
         arguments?.let {
             if (it.containsKey(ARG_ITEM_ID)) {
                 // Load the dummy content specified by the fragment
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
-                item = DummyContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]
+                item = EmpirePresenter.ITEM_MAP[it.getString(ARG_ITEM_ID)]
                 activity?.toolbar_layout?.title = item?.name
             }
         }
@@ -47,6 +55,15 @@ class ItemDetailFragment : Fragment() {
         // Show the dummy content as text in a TextView.
         item?.let {
             rootView.item_detail.text = it.description()
+        }
+        rootView.btn_favorite.setOnClickListener {
+            //            item?.favorite = item?.favorite != true
+
+            val favorited = if (item!!.isFavorite)
+                "This is Favorited"
+
+            else "This is Not Favorited"
+            rootView.text_view_favorite.text = favorited
         }
 
         return rootView

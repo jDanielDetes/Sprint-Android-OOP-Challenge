@@ -1,5 +1,6 @@
-package com.example.sprintchallenge_oop.model
+package com.example.sprintchallenge_oop.viewmodel
 
+import com.example.sprintchallenge_oop.model.*
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -9,7 +10,7 @@ import java.util.HashMap
  *
  * TODO: Replace all uses of this class before publishing your app.
  */
-object DummyContent {
+object EmpirePresenter {
 
     /**
      * An array of sample (dummy) items.
@@ -21,10 +22,30 @@ object DummyContent {
      */
     val ITEM_MAP: MutableMap<String, hierarchy> = HashMap()
 init {
-    ITEMS.add(civilizations.Civilization("Defensive","logistica"))
-    ITEMS.add(structures.Structure(35,1000))
-    ITEMS.add(technologies.Technology(45,"Age of Kings"))
-    ITEMS.add(units.Unit(5,27))
+    ITEMS.add(
+        civilizations.Civilization(
+            "Defensive",
+            "logistica"
+        )
+    )
+    ITEMS.add(
+        structures.Structure(
+            35,
+            1000
+        )
+    )
+    ITEMS.add(
+        technologies.Technology(
+            45,
+            "Age of Kings"
+        )
+    )
+    ITEMS.add(
+        units.Unit(
+            5,
+            27
+        )
+    )
 
     ITEM_MAP[ITEMS[0].name] = ITEMS[0]
 
@@ -34,7 +55,7 @@ init {
 
     ITEM_MAP[ITEMS[3].name] = ITEMS[3]
 
-    
+
 }
 
 }
