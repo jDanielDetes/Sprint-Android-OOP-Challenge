@@ -34,9 +34,7 @@ init {
 
     ITEM_MAP[ITEMS[3].name] = ITEMS[3]
 
-    ITEM_MAP[ITEMS[4].name] = ITEMS[4]
-
-    ITEM_MAP[ITEMS[5].name] = ITEMS[5]
+    
 }
 
 }
