@@ -1,5 +1,6 @@
 package com.example.sprintchallenge_oop.viewmodel
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.sprintchallenge_oop.R
+import com.example.sprintchallenge_oop.model.civilizations
 import com.example.sprintchallenge_oop.model.hierarchy
 import kotlinx.android.synthetic.main.activity_item_detail.*
 import kotlinx.android.synthetic.main.item_detail.*
@@ -26,11 +28,13 @@ class ItemDetailFragment : Fragment() {
      */
     private var item: hierarchy? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
-        
+
 
         arguments?.let {
             if (it.containsKey(ARG_ITEM_ID)) {
@@ -54,13 +58,16 @@ class ItemDetailFragment : Fragment() {
             rootView.item_detail.text = it.description()
         }
         rootView.btn_favorite.setOnClickListener {
-            //            item?.favorite = item?.favorite != true
+
 
             val favorited = if (item!!.isFavorite)
                 "This is Favorited"
 
             else "This is Not Favorited"
             rootView.text_view_favorite.text = favorited
+        }
+        rootView.btn_detailchange.setOnClickListener {
+            Toast.makeText(activity, item.toString(), Toast.LENGTH_SHORT).show()
         }
 
         return rootView
@@ -73,4 +80,5 @@ class ItemDetailFragment : Fragment() {
          */
         const val ARG_ITEM_ID = "item_id"
     }
+
 }
