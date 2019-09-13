@@ -30,10 +30,7 @@ class ItemDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
 
-        btn_detailchange.setOnClickListener {
-
-
-        }
+        
 
         arguments?.let {
             if (it.containsKey(ARG_ITEM_ID)) {
