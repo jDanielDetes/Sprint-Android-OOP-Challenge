@@ -1,12 +1,17 @@
 package com.example.sprintchallenge_oop.model
 
-open class hierarchy(val  name: String, val age: Int, val isFavorite: Boolean) {
+import java.io.Serializable
 
-open fun description():String {
-    return "this lovely thing is called $name"
+open class hierarchy(open val  name: String,open  val age: String,open  val isFavorite: Boolean): Serializable {
+
+    open fun description(): String {
+        return "hierarchy(name= $name, age= $age, isFavorite = $isFavorite"
+    }
 }
 
-class civilizations(name: String,age: Int,isFavorite: Boolean, val uniqueTech:String):hierarchy(name,age,isFavorite){
+
+
+/*class civilizations(name: String,age: Int,isFavorite: Boolean, val uniqueTech:String):hierarchy(name,age,isFavorite){
     override fun description(): String {
         return "this $name is definitely one of my favorites which is $isFavorite the special skill they have called $uniqueTech  "
     }
@@ -20,18 +25,22 @@ class civilizations(name: String,age: Int,isFavorite: Boolean, val uniqueTech:St
         }
     }
 
-    class technologies(name: String,age: Int,isFavorite: Boolean):hierarchy(name,age,isFavorite) {
+    class technologies(name: String,age: Int,isFavorite: Boolean, val expansion : String):hierarchy(name,age,isFavorite) {
         override fun description(): String {
-         return "i love tech especially this one called $name"
+         return "i love tech especially this one called $name its only in the expansion $expansion and during the $age age and yes thats $isFavorite this is my favorite"
         }
 
     }
 
 
-    class units(name: String,age: Int,isFavorite: Boolean):hierarchy(name,age,isFavorite)
+    class units(name: String,age: Int,isFavorite: Boolean, val attack:Int):hierarchy(name,age,isFavorite){
+        override fun description(): String {
+            return "my favorite unit on the battlefield is definitely $name he is also in the $age age and has a max attack of $attack and you can guess its $isFavorite he is my fav"
+        }
+    }
 
 }
-
+*/
 /*
 "id": 3,
 "name": "Bizantines",
