@@ -1,23 +1,18 @@
 package com.example.sprintchallenge_oop.model
 
-data class civilizations(
-    val civilizations: List<Civilization>
-)
+class civilizations {
 
-data class Civilization(
-    val army_type: String,
-    val civilization_bonus: List<String>,
-    val expansion: String,
-    val id: Int,
-    val team_bonus: String,
-    val unique_tech: String = "logistica",
-    val unique_unit: String
-) : hierarchy ("Bizantines","Dark age",true) {
-    override fun description(): String {
-        return "this $name is definitely one of my favorites which is $isFavorite the special skill they have called $unique_tech  "
+
+    data class Civilization(
+        val army_type: String = "defensive",
+        val unique_tech: String = "logistica"
+
+    ) : hierarchy("Bizantines", "Dark age", true) {
+        override fun description(): String {
+            return "this $name is definitely one of my favorites which is $isFavorite the special skill they have called $unique_tech  "
+        }
     }
 }
-
 
 
 

@@ -14,52 +14,29 @@ object DummyContent {
     /**
      * An array of sample (dummy) items.
      */
-    val ITEMS: MutableList<DummyItem> = ArrayList()
+    val ITEMS: MutableList<hierarchy> = ArrayList()
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    val ITEM_MAP: MutableMap<String, DummyItem> = HashMap()
+    val ITEM_MAP: MutableMap<String, hierarchy> = HashMap()
+init {
+    ITEMS.add(civilizations.Civilization("Defensive","logistica"))
+    ITEMS.add(structures.Structure(35,1000))
+    ITEMS.add(technologies.Technology(45,"Age of Kings"))
+    ITEMS.add(units.Unit(5,27))
 
-    private val COUNT = 25
+    ITEM_MAP[ITEMS[0].name] = ITEMS[0]
 
-    init {
-        // Add some sample items.
-        for (i in 1..COUNT) {
-            addItem(
-                createDummyItem(
-                    i
-                )
-            )
-        }
-    }
+    ITEM_MAP[ITEMS[1].name] = ITEMS[1]
 
-    private fun addItem(item: DummyItem) {
-        ITEMS.add(item)
-        ITEM_MAP.put(item.id, item)
-    }
+    ITEM_MAP[ITEMS[2].name] = ITEMS[2]
 
-    private fun createDummyItem(position: Int): DummyItem {
-        return DummyItem(
-            position.toString(),
-            "Item " + position,
-            makeDetails(position)
-        )
-    }
+    ITEM_MAP[ITEMS[3].name] = ITEMS[3]
 
-    private fun makeDetails(position: Int): String {
-        val builder = StringBuilder()
-        builder.append("Details about Item: ").append(position)
-        for (i in 0..position - 1) {
-            builder.append("\nMore details information here.")
-        }
-        return builder.toString()
-    }
+    ITEM_MAP[ITEMS[4].name] = ITEMS[4]
 
-    /**
-     * A dummy item representing a piece of content.
-     */
-    data class DummyItem(val id: String, val content: String, val details: String) {
-        override fun toString(): String = content
-    }
+    ITEM_MAP[ITEMS[5].name] = ITEMS[5]
+}
+
 }

@@ -1,30 +1,22 @@
 package com.example.sprintchallenge_oop.model
 
-data class structures(
-    val structures: List<Structure>
-)
+class structures {
 
-data class Structure(
 
-    val armor: String,
-    val attack: Int,
-    val build_time: Int,
-    val description: String,
-    val expansion: String,
-    val hit_points: Int = 1000,
-    val id: Int,
-    val line_of_sight: Int,
+    data class Structure(
 
-    val range: String,
-    val reload_time: Int,
-    val special: List<String>
-) : hierarchy ("Mining Camp","Dark age",true) {
-    override fun description(): String {
-        return "the $name is  available to make during the $age age and this one although people think this is my favorite thats actually $isFavorite because" +
-                "the HP is $hit_points"
+        val build_time: Int = 35,
+
+        val hit_points: Int = 1000
+
+
+    ) : hierarchy("Mining Camp", "Dark age", true) {
+        override fun description(): String {
+            return "the $name is  available to make during the $age age and this one although people think this is my favorite thats actually $isFavorite because" +
+                    "the HP is $hit_points"
+        }
     }
 }
-
 /*
 
 

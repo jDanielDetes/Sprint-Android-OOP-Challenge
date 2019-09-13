@@ -1,24 +1,22 @@
 package com.example.sprintchallenge_oop.model
 
-data class technologies(
-    val technologies: List<Technology>
-)
+ class technologies {
 
-data class Technology(
 
-    val applies_to: List<String>,
-    val build_time: Int,
-    val description: String,
-    val develops_in: String,
-    val expansion: String,
-    val id: Int
 
-): hierarchy ("Thumb Ring","Castle age",true) {
-    override fun description(): String {
-        return "i love tech especially this one called $name its only in the expansion $expansion and during the $age age and yes thats $isFavorite this is my favorite"
-    }
-}
+     data class Technology(
 
+
+         val build_time: Int = 45,
+         val expansion: String = " Age of Kings"
+
+
+     ) : hierarchy("Thumb Ring", "Castle age", true) {
+         override fun description(): String {
+             return "i love tech especially this one called $name its only in the expansion $expansion and during the $age age and yes thats $isFavorite this is my favorite"
+         }
+     }
+ }
 /*
 
 

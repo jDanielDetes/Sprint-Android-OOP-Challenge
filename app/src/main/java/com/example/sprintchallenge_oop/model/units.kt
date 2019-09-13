@@ -1,34 +1,19 @@
 package com.example.sprintchallenge_oop.model
 
-data class units(
-    val units: List<Unit>
-)
+ class units {
 
-data class Unit(
-    val accuracy: String,
-    val armor: String,
-    val armor_bonus: List<String>,
-    val attack: Int,
-    val attack_bonus: List<String>,
-    val attack_delay: Int,
-    val blast_radius: Int,
-    val build_time: Int,
-    val created_in: String,
-    val description: String,
-    val expansion: String,
-    val hit_points: Int,
-    val id: Int,
-    val line_of_sight: Int,
-    val movement_rate: Int,
-    val range: String,
-    val reload_time: Int,
-    val search_radius: Int
-): hierarchy ("Crossbowman","Castle age",true) {
-    override fun description(): String {
-        return "my favorite unit on the battlefield is definitely $name he is also in the $age age and has a max attack of $attack and you can guess its $isFavorite he is my fav"
+
+    data class Unit(
+
+        val attack: Int = 5,
+        val build_time: Int = 27
+
+    ) : hierarchy("Crossbowman", "Castle age", true) {
+        override fun description(): String {
+            return "my favorite unit on the battlefield is definitely $name he is also in the $age age and has a max attack of $attack and you can guess its $isFavorite he is my fav"
+        }
     }
 }
-
 /*
 
 

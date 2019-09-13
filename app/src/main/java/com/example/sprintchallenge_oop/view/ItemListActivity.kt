@@ -13,6 +13,7 @@ import com.example.sprintchallenge_oop.viewmodel.ItemDetailFragment
 import com.example.sprintchallenge_oop.R
 
 import com.example.sprintchallenge_oop.model.DummyContent
+import com.example.sprintchallenge_oop.model.hierarchy
 import kotlinx.android.synthetic.main.activity_item_list.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlinx.android.synthetic.main.item_list.*
@@ -27,6 +28,7 @@ import kotlinx.android.synthetic.main.item_list.*
  */
 class ItemListActivity : AppCompatActivity() {
 
+    var hierarchy = mutableListOf<hierarchy>()
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -36,6 +38,8 @@ class ItemListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
+        hierarchy = mutableListOf()
+
 
         setSupportActionBar(toolbar)
         toolbar.title = title
@@ -67,7 +71,7 @@ class ItemListActivity : AppCompatActivity() {
 
     class SimpleItemRecyclerViewAdapter(
         private val parentActivity: ItemListActivity,
-        private val values: List<DummyContent.DummyItem>,
+        private val values: List<hierarchy>,
         private val twoPane: Boolean
     ) :
         RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
@@ -76,11 +80,11 @@ class ItemListActivity : AppCompatActivity() {
 
         init {
             onClickListener = View.OnClickListener { v ->
-                val item = v.tag as DummyContent.DummyItem
+                val item = v.tag as hierarchy
                 if (twoPane) {
                     val fragment = ItemDetailFragment().apply {
                         arguments = Bundle().apply {
-                            putString(ItemDetailFragment.ARG_ITEM_ID, item.id)
+                            putString(ItemDetailFragment.ARG_ITEM_ID, item.name)
                         }
                     }
                     parentActivity.supportFragmentManager
@@ -89,7 +93,7 @@ class ItemListActivity : AppCompatActivity() {
                         .commit()
                 } else {
                     val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
-                        putExtra(ItemDetailFragment.ARG_ITEM_ID, item.id)
+                        putExtra(ItemDetailFragment.ARG_ITEM_ID, item.name)
                     }
                     v.context.startActivity(intent)
                 }
@@ -103,12 +107,12 @@ class ItemListActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val item = values[position]
-            holder.idView.text = item.id
-            holder.contentView.text = item.content
+            val hierarchy = values[position]
+            holder.idView.text = hierarchy.name
+            holder.contentView.text = hierarchy.description()
 
             with(holder.itemView) {
-                tag = item
+                tag = hierarchy
                 setOnClickListener(onClickListener)
             }
         }
