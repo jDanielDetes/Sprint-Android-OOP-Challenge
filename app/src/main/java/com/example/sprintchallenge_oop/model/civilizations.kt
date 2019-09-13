@@ -1,10 +1,10 @@
 package com.example.sprintchallenge_oop.model
 
-data class civilizations(
+open class civilizations(
     val civilizations: List<Civilization>
 )
 
-data class Civilization(
+open class Civilization(
     val army_type: String,
     val civilization_bonus: List<String>,
     val expansion: String,
