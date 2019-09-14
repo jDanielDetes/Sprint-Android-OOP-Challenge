@@ -9,12 +9,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.example.sprintchallenge_oop.viewmodel.ItemDetailFragment
 import com.example.sprintchallenge_oop.R
+import com.example.sprintchallenge_oop.model.civilizations
 
 import com.example.sprintchallenge_oop.viewmodel.EmpirePresenter
 import com.example.sprintchallenge_oop.model.hierarchy
 import kotlinx.android.synthetic.main.activity_item_list.*
+import kotlinx.android.synthetic.main.item_detail.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 import kotlinx.android.synthetic.main.item_list.*
 
@@ -26,9 +29,15 @@ import kotlinx.android.synthetic.main.item_list.*
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-class ItemListActivity : AppCompatActivity() {
-
-    var hierarchy = mutableListOf<hierarchy>()
+class ItemListActivity : AppCompatActivity(),ItemDetailFragment.ItemDetailFragmentListener {
+    override fun ItemDetailFragmentListener (data: hierarchy) {
+        val favorited = if (data.isFavorite) "Favorited" else "Not Favorited"
+        Toast.makeText(this@ItemListActivity, "${data.name} is $favorited", Toast.LENGTH_LONG
+        ).show()
+// Toast.makeText(activity, item.toString(), Toast.LENGTH_SHORT).show()
+    }
+    private var hierarchy = mutableListOf<hierarchy>()
+    private var item: hierarchy? = null
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -38,7 +47,7 @@ class ItemListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
-        hierarchy = mutableListOf()
+
 
 
         setSupportActionBar(toolbar)

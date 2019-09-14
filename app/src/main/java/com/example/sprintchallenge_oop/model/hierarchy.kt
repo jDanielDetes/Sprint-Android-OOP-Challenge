@@ -2,7 +2,7 @@ package com.example.sprintchallenge_oop.model
 
 import java.io.Serializable
 
-open class hierarchy(open val  name: String,open  val age: String,open  val isFavorite: Boolean): Serializable {
+abstract class hierarchy(open val  name: String,open  val age: String,open  val isFavorite: Boolean = false): Serializable {
 
     open fun description(): String {
         return "hierarchy(name= $name, age= $age, isFavorite = $isFavorite"

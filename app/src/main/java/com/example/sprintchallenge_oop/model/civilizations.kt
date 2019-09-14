@@ -5,9 +5,11 @@ class civilizations {
 
     data class Civilization(
         val army_type: String = "defensive",
-        val unique_tech: String = "logistica"
+        val unique_tech: String = "logistica",
+        val isFavorite2: Boolean = true
 
-    ) : hierarchy("Bizantines", "Dark age", true) {
+
+    ) : hierarchy("Bizantines", "Dark age", isFavorite = false) {
         override fun description(): String {
             return "this $name is definitely one of my favorites which is $isFavorite the special skill they have called $unique_tech  "
         }

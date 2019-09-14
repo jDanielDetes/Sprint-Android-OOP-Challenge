@@ -8,7 +8,8 @@ package com.example.sprintchallenge_oop.model
 
 
          val build_time: Int = 45,
-         val expansion: String = " Age of Kings"
+         val expansion: String = " Age of Kings",
+         val isFavorite2: Boolean = true
 
 
      ) : hierarchy("Thumb Ring", "Castle age", true) {

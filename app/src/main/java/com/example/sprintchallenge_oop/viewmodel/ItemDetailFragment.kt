@@ -27,6 +27,7 @@ class ItemDetailFragment : Fragment() {
      * The dummy content this fragment is presenting.
      */
     private var item: hierarchy? = null
+    var listener:ItemDetailFragmentListener? = null
 
 
 
@@ -56,6 +57,7 @@ class ItemDetailFragment : Fragment() {
         // Show the dummy content as text in a TextView.
         item?.let {
             rootView.item_detail.text = it.description()
+            listener?.ItemDetailFragmentListener(it)
         }
         rootView.btn_favorite.setOnClickListener {
 
@@ -72,6 +74,20 @@ class ItemDetailFragment : Fragment() {
 
         return rootView
     }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is ItemDetailFragmentListener) {
+            listener = context
+        }
+    }
+
+     interface ItemDetailFragmentListener{
+        fun ItemDetailFragmentListener(data:hierarchy)
+    }
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+    }
 
     companion object {
         /**
@@ -80,5 +96,7 @@ class ItemDetailFragment : Fragment() {
          */
         const val ARG_ITEM_ID = "item_id"
     }
+
+
 
 }

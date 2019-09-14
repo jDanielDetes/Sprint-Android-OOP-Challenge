@@ -7,7 +7,8 @@ class structures {
 
         val build_time: Int = 35,
 
-        val hit_points: Int = 1000
+        val hit_points: Int = 1000,
+        val isFavorite2: Boolean = true
 
 
     ) : hierarchy("Mining Camp", "Dark age", true) {

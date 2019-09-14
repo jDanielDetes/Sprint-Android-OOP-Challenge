@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.item_detail.*
  * item details are presented side-by-side with a list of items
  * in a [ItemListActivity].
  */
-class ItemDetailActivity : AppCompatActivity() {
+open class ItemDetailActivity : AppCompatActivity() {
 
 
 

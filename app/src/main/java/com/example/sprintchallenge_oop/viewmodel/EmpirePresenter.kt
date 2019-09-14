@@ -25,7 +25,8 @@ init {
     ITEMS.add(
         civilizations.Civilization(
             "Defensive",
-            "logistica"
+            "logistica",
+            true
         )
     )
     ITEMS.add(

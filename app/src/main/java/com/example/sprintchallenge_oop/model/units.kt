@@ -6,7 +6,8 @@ package com.example.sprintchallenge_oop.model
     data class Unit(
 
         val attack: Int = 5,
-        val build_time: Int = 27
+        val build_time: Int = 27,
+        val isFavorite2: Boolean = false
 
     ) : hierarchy("Crossbowman", "Castle age", true) {
         override fun description(): String {
